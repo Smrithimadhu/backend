@@ -19,7 +19,6 @@ import java.util.List;
 public class BlogController {
 
     //-------------------------PROPERTIES------------------------------------------------------------------------
-    //Hello guys branch 1 .
     @Autowired
     private BlogService blogService;
     @Autowired
