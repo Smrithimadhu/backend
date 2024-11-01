@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 
-
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class BlogController {
@@ -27,7 +27,7 @@ public class BlogController {
 
     //-------------------------METHODS--------------------------------------------------------------------------
 
-    @PostMapping("/blogs/users/{userId}")
+    @PostMapping("/blogs/{userId}")
     public ResponseEntity<Blog> createBlog(@RequestBody Blog blog, @PathVariable Integer userId) {
         try {
             Blog createdBlog = blogService.createBlog(blog, userId);
@@ -79,7 +79,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @GetMapping("/users/{userId}/blogs")
+    @GetMapping("/blogs/{userId}")
     public ResponseEntity<List<Blog>> getBlogsByUser(@PathVariable Integer userId) {
         List<Blog> blogs = blogService.getBlogsByUser(userId);
         return ResponseEntity.ok(blogs);
