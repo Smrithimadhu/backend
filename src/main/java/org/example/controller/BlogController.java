@@ -40,7 +40,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @PutMapping("/blogs/{blogId}")
+    @PutMapping("/blogs/edit/{blogId}")
     public ResponseEntity<Blog> updateBlog(@PathVariable Integer blogId, @RequestBody Blog updatedBlog) {
         try {
             return ResponseEntity.ok(blogService.updateBlog(blogId, updatedBlog));
@@ -55,7 +55,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @DeleteMapping("/blogs/{blogId}")
+    @DeleteMapping("/blogs/delete/{blogId}/")
     public ResponseEntity<Void> deleteBlog(@PathVariable Integer blogId) {
         blogService.deleteBlog(blogId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
@@ -63,7 +63,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @GetMapping("/blogs/{blogId}")
+    @GetMapping("/blogs/viewblog/{blogId}")
     public ResponseEntity<Blog> getBlogById(@PathVariable Integer blogId) {
         Blog blog = blogService.getBlogById(blogId);
         return blog != null ? ResponseEntity.ok(blog) : ResponseEntity.notFound().build();

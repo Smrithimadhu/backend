@@ -1,0 +1,109 @@
+COMMON URL : http://localhost:8080/backend/api
+
+Users :
+
+------------CREATE A USER------------
+http://localhost:8080/blogbackend/api/users  [DONE]
+
+------------UPDATE USER DETAILS OF SPECIFIC USER------------
+http://localhost:8080/blogbackend/api/users/{userId}    [DONE]
+
+------------DELETE A SPECIFIC USER------------
+http://localhost:8080/blogbackend/api/users/{userId}    [DONE]
+
+------------GETTING A SPECIFIC USER DETAILS------------
+http://localhost:8080/blogbackend/api/users/{userId}    [DONE]
+
+------------GETTING ALL THE USERS------------
+http://localhost:8080/blogbackend/api/users     [DONE]
+
+
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+
+Blogs :
+
+------------USER CREATING A BLOG BASED ON USER_ID------------
+http://localhost:8080/blogbackend/api/blogs/{userId}  [DONE]
+
+
+------------USER UPDATING A BLOG------------
+http://localhost:8080/blogbackend/api/blogs/edit/{blogId}    [DONE]
+
+
+------------USER DELETING A BLOG------------
+http://localhost:8080/blogbackend/api/blogs/delete/{blogId}    [DONE]
+
+
+------------USER GETTING A SPECIFIC BLOG FOR DISPLAY------------
+http://localhost:8080/blogbackend/api/blogs/viewblog/{blogId}    [DONE]
+
+
+------------GETTING ALL BLOGS------------
+http://localhost:8080/blogbackend/api/blogs     [DONE]
+
+
+------------RETRIEVING BLOGS OF SPECIFIC USER------------
+http://localhost:8080/blogbackend/api/blogs/users/{userId}      [DONE]
+
+
+-----------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------
+
+USER DATA - Dummy :
+
+    {
+        "username": "Mithra",
+        "password": "admin",
+        "email": "mithra@gmail.com"
+    }
+
+
+    {
+        "username": "Kiruppa",
+        "password": "12345",
+        "email": "kiru@gmail.com"
+    }
+
+
+    {
+        "username": "Smrithi",
+        "password": "password",
+        "email": "smrithi@gmail.com"
+    }
+
+
+    {
+        "username": "Jolene",
+        "password": "xyz",
+        "email": "jolene@gmail.com"
+    }
+
+
+    -----------------------------------------------------------------------------------------------------------------
+    -----------------------------------------------------------------------------------------------------------------
+
+    BLOG DATA - Dummy:
+
+    {
+        "category": "FOOD",
+        "title": "Over Food Consumption",
+        "content": "Leads to obesity."
+    }
+
+
+    {
+        "category": "SPORTS",
+        "title": "Won the test series against Australia",
+        "content": "Virat -Man of the Match."
+    }
+
+
+
+
+
+
+
+
+
+
