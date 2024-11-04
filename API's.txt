@@ -6,10 +6,10 @@ Users :
 http://localhost:8080/blogbackend/api/users  [DONE]
 
 ------------UPDATE USER DETAILS OF SPECIFIC USER------------
-http://localhost:8080/blogbackend/api/users/{userId}    [DONE]
+http://localhost:8080/blogbackend/api/users/edit/{userId}    [DONE]
 
 ------------DELETE A SPECIFIC USER------------
-http://localhost:8080/blogbackend/api/users/{userId}    [DONE]
+http://localhost:8080/blogbackend/api/users/delete/{userId}    [DONE]
 
 ------------GETTING A SPECIFIC USER DETAILS------------
 http://localhost:8080/blogbackend/api/users/{userId}    [DONE]

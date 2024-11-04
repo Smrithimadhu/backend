@@ -5,6 +5,7 @@ import org.example.exception.UserAlreadyExistsException;
 import org.example.model.User;
 import org.example.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +18,9 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
 
     public User createUser(User user) {
@@ -42,7 +46,12 @@ public class UserService {
 
 
     public void deleteUser(Integer userId) {
-        userRepository.deleteById(userId);
+        // Delete associated blogs first
+        jdbcTemplate.update("DELETE FROM blogs WHERE user_id = ?", userId);
+
+        // Delete the user
+        jdbcTemplate.update("DELETE FROM users WHERE user_id = ?", userId);
+
     }
 
 
