@@ -28,7 +28,7 @@ public class BlogController {
 
     //-------------------------METHODS--------------------------------------------------------------------------
 
-    @PostMapping("/blogs/users/{userId}")
+    @PostMapping("/blogs/create/{userId}")
     public ResponseEntity<Blog> createBlog(@RequestBody Blog blog, @PathVariable Integer userId) {
         try {
             Blog createdBlog = blogService.createBlog(blog, userId);
@@ -42,7 +42,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @PutMapping("/blogs/{blogId}")
+    @PutMapping("/blogs/edit/{blogId}")
     public ResponseEntity<Blog> updateBlog(@PathVariable Integer blogId, @RequestBody Blog updatedBlog) {
         try {
             return ResponseEntity.ok(blogService.updateBlog(blogId, updatedBlog));
@@ -57,7 +57,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @DeleteMapping("/blogs/{blogId}")
+    @DeleteMapping("/blogs/delete/{blogId}")
     public ResponseEntity<Void> deleteBlog(@PathVariable Integer blogId) {
         blogService.deleteBlog(blogId);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
@@ -65,7 +65,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @GetMapping("/blogs/{blogId}")
+    @GetMapping("/blogs/view/{blogId}")
     public ResponseEntity<Blog> getBlogById(@PathVariable Integer blogId) {
         Blog blog = blogService.getBlogById(blogId);
         return blog != null ? ResponseEntity.ok(blog) : ResponseEntity.notFound().build();
@@ -80,7 +80,7 @@ public class BlogController {
 
     //----------------------------------------------------------------------------------------------------------
 
-    @GetMapping("/users/{userId}/blogs")
+    @GetMapping("/blogs/user/{userId}")
     public ResponseEntity<List<Blog>> getBlogsByUser(@PathVariable Integer userId) {
         List<Blog> blogs = blogService.getBlogsByUser(userId);
         return ResponseEntity.ok(blogs);
